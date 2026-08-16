@@ -22,7 +22,7 @@ function App() {
           message: 'hello chatbot',
           sender: 'user',
           id: 'id1',
-        },[]]);
+        }]);
         // const [chatMessages, setChatMessages] = array;  //array destructuring
         // const chatMessages = array[0];
         // const setChatMessages = array[1];
@@ -37,7 +37,7 @@ function App() {
         },[])
 
         useEffect(() => {
-          localStorage.setItem('messages',JSON.stringify('messages'))
+          localStorage.setItem('messages',JSON.stringify(chatMessages))
         }, [chatMessages])
 
         return (
