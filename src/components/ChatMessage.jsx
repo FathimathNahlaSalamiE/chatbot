@@ -2,6 +2,7 @@ import RobotProfileImage from '../assets/robot.png'
 import UserProfileImage from '../assets/profile-1.jpg'
 import './ChatMessage.css';
 import dayjs from 'dayjs';
+import ReactMarkdown from 'react-markdown'
 
 
 export function ChatMessage({message,sender,time}) {
@@ -30,7 +31,10 @@ export function ChatMessage({message,sender,time}) {
               <img src={RobotProfileImage} width="50" />
             )}
             <div className="chat-message-text">
-              {message}
+              {typeof message === 'string' 
+                ? <ReactMarkdown>{message}</ReactMarkdown> 
+                : message
+              }
               {time && (
                   <div className='chat-message-time'>
                     {dayjs(time).format('h:mma')}

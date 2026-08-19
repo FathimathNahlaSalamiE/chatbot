@@ -2,7 +2,6 @@ import { useState, useEffect } from 'react'
 import ChatInput from './components/ChatInput'
 import ChatMessages from './components/ChatMessages'
 import './App.css'
-import { Chatbot } from 'supersimpledev'
 
 
       // function ChatMessages({chatMessages}) {
@@ -27,14 +26,14 @@ function App() {
         // const chatMessages = array[0];
         // const setChatMessages = array[1];
 
-        useEffect(() => {
-          Chatbot.addResponses({
-            'goodbye': 'Goodbye. Have a great day!',
-            'give me a unique id': function() {
-              return `Sure! Here's a unique ID: ${crypto.randomUUID()}`;
-            }
-          });  
-        },[])
+        // useEffect(() => {
+        //   Chatbot.addResponses({
+        //     'goodbye': 'Goodbye. Have a great day!',
+        //     'give me a unique id': function() {
+        //       return `Sure! Here's a unique ID: ${crypto.randomUUID()}`;
+        //     }
+        //   });  
+        // },[])
 
         useEffect(() => {
           localStorage.setItem('messages',JSON.stringify(chatMessages))
