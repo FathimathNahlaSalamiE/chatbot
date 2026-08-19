@@ -1,37 +1,68 @@
-# 🤖 React Chatbot
+# 🤖 AI Chatbot – React.js + Groq API
 
-A simple and interactive chatbot application built with **React.js** and **Vite**. This project was developed to practice modern React concepts such as reusable components, state management, event handling, side effects, and browser local storage.
+An AI-powered chatbot built using **React.js** and the **Groq API**.  
+The project provides an interactive chat interface where users can communicate with an AI model and receive dynamically generated responses.
+
+The application also demonstrates modern React concepts such as component-based architecture, state management, side effects, event handling, API integration, Markdown rendering, and browser local storage.
+
+---
 
 ## ✨ Features
 
-- 💬 Interactive chatbot interface
+- 🤖 AI-powered chatbot using the **Groq API**
+- 💬 Interactive chat interface
 - 👤 Send and display user messages
-- 🤖 Automated chatbot responses
-- 💾 Save chat messages using browser `localStorage`
+- 🧠 Generate AI responses dynamically
+- ⚡ Fast AI responses using Groq
+- 💾 Store chat messages using browser `localStorage`
 - 🔄 Restore chat history after refreshing the page
 - ⚛️ Reusable React components
+- 📝 Markdown rendering for AI responses
 - 📱 Responsive user interface
-- ⚡ Fast development with Vite
+- 🕒 Display message timestamps
+- ⌨️ Handle user input and message submission
+- 🚀 Built with Vite for fast development
+
+---
 
 ## 🛠️ Technologies Used
 
-- **React.js**
-- **JavaScript (ES6+)**
-- **HTML5**
-- **CSS3**
-- **Vite**
-- **Day.js**
-- **Local Storage**
+### Frontend
+
+- React.js
+- JavaScript (ES6+)
+- HTML5
+- CSS3
+- Vite
+
+### AI & API
+
+- Groq API
+- AI/LLM integration
+
+### Libraries
+
+- Day.js
+- React Markdown
+
+### Browser Features
+
+- Local Storage
+- Fetch API
+
+---
 
 ## 📸 Screenshots
 
 ### Chatbot Interface
 
-<img width="1915" height="968" alt="Screenshot 2026-08-16 175926" src="https://github.com/user-attachments/assets/1d9776ad-8231-4ee8-9c11-35f776f3e85e" />
+<img width="1919" height="964" alt="Screenshot 2026-08-19 175106" src="https://github.com/user-attachments/assets/bfe84eda-7a09-4d26-9e59-ba5b593f3bc5" />
 
-### Chat Conversation
+### AI Chat Conversation
 
-<img width="1918" height="970" alt="Screenshot 2026-08-16 175907" src="https://github.com/user-attachments/assets/f8ea0bb9-ab39-4260-9818-ac42c5679e77" />
+<img width="1919" height="955" alt="Screenshot 2026-08-19 175518" src="https://github.com/user-attachments/assets/cb11f352-5c0a-4ea2-95f9-bffc2bd6c8a2" />
+
+---
 
 ## 📂 Project Structure
 
@@ -56,6 +87,7 @@ chatbot/
 │   ├── index.css
 │   └── main.jsx
 │
+├── .env
 ├── .gitignore
 ├── eslint.config.js
 ├── index.html
@@ -63,141 +95,3 @@ chatbot/
 ├── package-lock.json
 ├── vite.config.js
 └── README.md
-```
-
-## 🚀 Getting Started
-
-Follow the steps below to run the project locally.
-
-### 1. Clone the repository
-
-```bash
-git clone https://github.com/FathimathNahlaSalamiE/chatbot.git
-```
-
-### 2. Navigate to the project directory
-
-```bash
-cd chatbot
-```
-
-### 3. Install dependencies
-
-```bash
-npm install
-```
-
-### 4. Start the development server
-
-```bash
-npm run dev
-```
-
-The application will be available at the local URL displayed in your terminal, usually:
-
-```text
-http://localhost:5173
-```
-
-## 📜 Available Scripts
-
-### Start the development server
-
-```bash
-npm run dev
-```
-
-### Build the project
-
-```bash
-npm run build
-```
-
-### Preview the production build
-
-```bash
-npm run preview
-```
-
-### Run ESLint
-
-```bash
-npm run lint
-```
-
-## 🧠 React Concepts Demonstrated
-
-This project helped demonstrate the following React and JavaScript concepts:
-
-- JSX
-- Functional Components
-- Component-Based Architecture
-- Reusable Components
-- `useState`
-- `useEffect`
-- Props
-- Event Handling
-- Conditional Rendering
-- Array Methods
-- Browser `localStorage`
-- JavaScript ES6+
-- React project structure
-- Vite development workflow
-
-## 💾 Data Persistence
-
-The application uses the browser's **localStorage** to save chat messages.
-
-This allows the conversation history to remain available even when the browser page is refreshed.
-
-## 🧩 Components
-
-### `App.jsx`
-
-The main application component responsible for managing the chatbot application and its state.
-
-### `ChatInput.jsx`
-
-Handles user input and sending messages to the chatbot.
-
-### `ChatMessages.jsx`
-
-Displays the conversation between the user and the chatbot.
-
-## 🎯 Project Purpose
-
-This project was developed as a practical **React.js learning project** to gain hands-on experience with frontend development and interactive user interfaces.
-
-The main focus was learning how to build a React application using reusable components and manage application state and browser data.
-
-## 🔮 Future Improvements
-
-Possible future improvements include:
-
-- 🔌 Integrate an AI/LLM API
-- ⏳ Add chatbot typing/loading indicators
-- 🕐 Add timestamps to messages
-- 🗑️ Add a clear chat button
-- 🌙 Add dark mode
-- 📱 Improve mobile responsiveness
-- 🎨 Improve UI/UX
-- 💬 Add more chatbot responses
-- 🚀 Deploy the application online
-
-## 👩‍💻 Author
-
-**Fathimath Nahla Salami E**
-
-Python Full-Stack Developer | AI/ML Developer
-
-### GitHub
-
-https://github.com/FathimathNahlaSalamiE
-
-### Project Repository
-
-https://github.com/FathimathNahlaSalamiE/chatbot
-
-## 📄 License
-
-This project was developed for educational and portfolio purposes.
