@@ -71,18 +71,13 @@ function ChatInput({ chatMessages, setChatMessages, currentId, startNewChat}) {
         }))
         .filter(msg => msg.content !== '');
 
-      const response = await fetch('https://api.groq.com/openai/v1/chat/completions', {
+      const response = await fetch('http://localhost:5000/api/chat', {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json',
-          'Authorization': `Bearer ${import.meta.env.VITE_GROQ_API_KEY}`
+          'Content-Type': 'application/json'
         },
         body: JSON.stringify({
-          model: 'qwen/qwen3.6-27b',
-          messages: [
-            { role: 'system', content: 'You are a helpful assistant.' },
-            ...conversationHistory
-          ]
+          conversationHistory
         })
       });
 
