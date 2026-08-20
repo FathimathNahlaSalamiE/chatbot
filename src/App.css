@@ -16,3 +16,201 @@
   height: 40px;
   margin: -15px;
 }
+.app-layout {
+  display: flex;
+  height: 100vh;
+}
+
+.sidebar {
+  width: 260px;
+  background-color: #f4f4f4;
+  border-right: 1px solid #ddd;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+  overflow-y: auto;
+}
+
+.new-chat-button {
+  background-color: #20b12c;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  padding: 10px;
+  font-size: 14px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.conversation-list {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.conversation-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  border-radius: 8px;
+  cursor: pointer;
+  background-color: white;
+  border: 1px solid #ddd;
+}
+
+.conversation-item.active {
+  background-color: #d4edda;
+  border-color: #20b12c;
+}
+
+.conversation-title {
+  font-size: 13px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  flex: 1;
+}
+
+.delete-button {
+  background: none;
+  border: none;
+  color: #999;
+  font-size: 16px;
+  cursor: pointer;
+  margin-left: 5px;
+  padding: 0 4px;
+}
+
+.delete-button:hover {
+  color: red;
+}
+
+.app-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  max-width: 40%;
+}
+
+/* Hamburger — hidden on desktop */
+.hamburger-button {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 10px;
+  width: 40px;
+  align-self: flex-start;
+  flex-shrink: 0;
+}
+
+.hamburger-button span {
+  display: block;
+  width: 24px;
+  height: 3px;
+  background-color: #333;
+  border-radius: 3px;
+}
+
+/* Overlay */
+.sidebar-overlay {
+  display: none;
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.4);
+  z-index: 99;
+}
+
+@media (max-width: 768px) {
+
+  .app-layout {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .app-container {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    flex: 1;
+    padding: 0;
+    box-sizing: border-box;
+  }
+
+  /* Sidebar */
+  .sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 260px;
+    height: 100vh;
+    z-index: 100;
+    transform: translateX(-100%);
+    transition: transform 0.3s ease;
+  }
+
+  .sidebar.sidebar-open {
+    transform: translateX(0);
+  }
+
+  /* Overlay */
+  .sidebar-overlay {
+    display: block;
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    z-index: 99;
+  }
+
+  /* Hamburger */
+  .hamburger-button {
+    display: flex;
+  }
+
+  /* Messages use full available width */
+  .chat-message-user,
+  .chat-message-robot {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+  }
+
+  /* Text can use almost the full width */
+  .chat-message-text {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    font-size: 14px;
+    line-height: 1.5;
+  }
+
+  /* Input */
+  .chat-input-container {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    margin: 8px 0;
+  }
+
+  /* Textarea */
+  .chat-input-container textarea {
+    width: 100%;
+    max-width: 100%;
+    box-sizing: border-box;
+    resize: none;
+    overflow-wrap: break-word;
+    white-space: pre-wrap;
+  }
+
+  /* Smaller avatars */
+  .user-image,
+  .chat-message-robot img[width="50"] {
+    width: 35px !important;
+    height: 35px !important;
+  }
+}
