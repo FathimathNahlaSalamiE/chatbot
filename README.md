@@ -1,16 +1,97 @@
-# React + Vite
+# 🤖 AI Chatbot – React.js + Groq API
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+An AI-powered chatbot built using **React.js** and the **Groq API**.  
+The project provides an interactive chat interface where users can communicate with an AI model and receive dynamically generated responses.
 
-Currently, two official plugins are available:
+The application also demonstrates modern React concepts such as component-based architecture, state management, side effects, event handling, API integration, Markdown rendering, and browser local storage.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## ✨ Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- 🤖 AI-powered chatbot using the **Groq API**
+- 💬 Interactive chat interface
+- 👤 Send and display user messages
+- 🧠 Generate AI responses dynamically
+- ⚡ Fast AI responses using Groq
+- 💾 Store chat messages using browser `localStorage`
+- 🔄 Restore chat history after refreshing the page
+- ⚛️ Reusable React components
+- 📝 Markdown rendering for AI responses
+- 📱 Responsive user interface
+- 🕒 Display message timestamps
+- ⌨️ Handle user input and message submission
+- 🚀 Built with Vite for fast development
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Technologies Used
+
+### Frontend
+
+- React.js
+- JavaScript (ES6+)
+- HTML5
+- CSS3
+- Vite
+
+### AI & API
+
+- Groq API
+- AI/LLM integration
+
+### Libraries
+
+- Day.js
+- React Markdown
+
+### Browser Features
+
+- Local Storage
+- Fetch API
+
+---
+
+## 📸 Screenshots
+
+### Chatbot Interface
+
+<img width="1919" height="964" alt="Screenshot 2026-08-19 175106" src="https://github.com/user-attachments/assets/bfe84eda-7a09-4d26-9e59-ba5b593f3bc5" />
+
+### AI Chat Conversation
+
+<img width="1919" height="955" alt="Screenshot 2026-08-19 175518" src="https://github.com/user-attachments/assets/cb11f352-5c0a-4ea2-95f9-bffc2bd6c8a2" />
+
+---
+
+## 📂 Project Structure
+
+```text
+chatbot/
+│
+├── public/
+│
+├── screenshots/
+│   ├── chatbot.png
+│   └── chat-conversation.png
+│
+├── src/
+│   ├── assets/
+│   │
+│   ├── components/
+│   │   ├── ChatInput.jsx
+│   │   └── ChatMessages.jsx
+│   │
+│   ├── App.jsx
+│   ├── App.css
+│   ├── index.css
+│   └── main.jsx
+│
+├── .env
+├── .gitignore
+├── eslint.config.js
+├── index.html
+├── package.json
+├── package-lock.json
+├── vite.config.js
+└── README.md
