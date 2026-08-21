@@ -71,7 +71,7 @@ function ChatInput({ chatMessages, setChatMessages, currentId, startNewChat}) {
         }))
         .filter(msg => msg.content !== '');
 
-      const response = await fetch('https://chatbot-backend-nahla.onrender.com/api/chat', {
+      const response = await fetch('https://chatbot-nahla.onrender.com/api/chat', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json'
