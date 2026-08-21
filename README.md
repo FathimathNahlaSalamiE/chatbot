@@ -1,97 +1,160 @@
-# 🤖 AI Chatbot – React.js + Groq API
+# 🤖 AI Chatbot
 
-An AI-powered chatbot built using **React.js** and the **Groq API**.  
-The project provides an interactive chat interface where users can communicate with an AI model and receive dynamically generated responses.
+A full-stack AI chatbot web application built with React and powered by the Groq API (Qwen model). Features a conversation history sidebar, markdown rendering, mobile responsiveness, and a secure Node.js backend.
 
-The application also demonstrates modern React concepts such as component-based architecture, state management, side effects, event handling, API integration, Markdown rendering, and browser local storage.
-
----
-
-## ✨ Features
-
-- 🤖 AI-powered chatbot using the **Groq API**
-- 💬 Interactive chat interface
-- 👤 Send and display user messages
-- 🧠 Generate AI responses dynamically
-- ⚡ Fast AI responses using Groq
-- 💾 Store chat messages using browser `localStorage`
-- 🔄 Restore chat history after refreshing the page
-- ⚛️ Reusable React components
-- 📝 Markdown rendering for AI responses
-- 📱 Responsive user interface
-- 🕒 Display message timestamps
-- ⌨️ Handle user input and message submission
-- 🚀 Built with Vite for fast development
+🔗 **Live Demo:** [fathimathnahlasalamie.github.io/chatbot](https://fathimathnahlasalamie.github.io/chatbot)
 
 ---
 
-## 🛠️ Technologies Used
+## Features
 
-### Frontend
+- 💬 Real-time AI chat powered by Groq API (`qwen/qwen3.6-27b`)
+- 🗂️ Conversation history sidebar — save, switch, and delete chats
+- 📝 Markdown rendering for formatted bot responses
+- 📱 Fully responsive — hamburger menu on mobile
+- 💾 Chat persistence using localStorage
+- 🔒 API key secured on a Node.js backend (never exposed to the browser)
+- ⏱️ Timestamps on each message
+- ⌨️ Press Enter to send, Shift+Enter for new line
 
-- React.js
-- JavaScript (ES6+)
-- HTML5
-- CSS3
+---
+
+## Tech Stack
+
+**Frontend**
+- React 19
 - Vite
+- react-markdown
+- dayjs
+- CSS (custom, no UI library)
+- Deployed on **GitHub Pages**
 
-### AI & API
-
+**Backend**
+- Node.js
+- Express
 - Groq API
-- AI/LLM integration
-
-### Libraries
-
-- Day.js
-- React Markdown
-
-### Browser Features
-
-- Local Storage
-- Fetch API
+- Deployed on **Render**
 
 ---
 
-## 📸 Screenshots
+## Screenshots
 
-### Chatbot Interface
+<img width="1917" height="977" alt="Screenshot 2026-08-21 125612" src="https://github.com/user-attachments/assets/a0809e61-c783-43f5-b5c3-7a0852d90696" />
 
-<img width="1919" height="964" alt="Screenshot 2026-08-19 175106" src="https://github.com/user-attachments/assets/bfe84eda-7a09-4d26-9e59-ba5b593f3bc5" />
-
-### AI Chat Conversation
-
-<img width="1919" height="955" alt="Screenshot 2026-08-19 175518" src="https://github.com/user-attachments/assets/cb11f352-5c0a-4ea2-95f9-bffc2bd6c8a2" />
+<img width="1917" height="969" alt="Screenshot 2026-08-21 125906" src="https://github.com/user-attachments/assets/6ca49cdd-dfd8-4b12-becd-eca5baba50c8" />
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
-```text
-chatbot/
-│
-├── public/
-│
-├── screenshots/
-│   ├── chatbot.png
-│   └── chat-conversation.png
+```
+chatbot-project/
+├── backend/
+│   ├── server.js          # Express server — proxies requests to Groq API
+│   ├── package.json
+│   └── .env               # GROQ_API_KEY (not committed)
 │
 ├── src/
-│   ├── assets/
-│   │
-│   ├── components/
-│   │   ├── ChatInput.jsx
-│   │   └── ChatMessages.jsx
-│   │
-│   ├── App.jsx
+│   ├── App.jsx            # Root component — conversation state management
 │   ├── App.css
-│   ├── index.css
-│   └── main.jsx
+│   ├── main.jsx
+│   └── components/
+│       ├── ChatInput.jsx  # Textarea input, send/clear buttons
+│       ├── ChatMessages.jsx # Scrollable message list
+│       └── ChatMessage.jsx  # Single message bubble
 │
-├── .env
-├── .gitignore
-├── eslint.config.js
 ├── index.html
-├── package.json
-├── package-lock.json
 ├── vite.config.js
-└── README.md
+└── package.json
+```
+
+---
+
+## Getting Started
+
+### Prerequisites
+- Node.js 18+
+- A [Groq API key](https://console.groq.com)
+
+### 1. Clone the repository
+
+```bash
+git clone https://github.com/FathimathNahlaSalamiE/chatbot.git
+cd chatbot
+```
+
+### 2. Set up the backend
+
+```bash
+cd backend
+npm install
+```
+
+Create a `.env` file inside the `backend/` folder:
+
+```
+GROQ_API_KEY=your_groq_api_key_here
+```
+
+Start the backend server:
+
+```bash
+npm start
+```
+
+The backend runs on `http://localhost:5000`.
+
+### 3. Set up the frontend
+
+Open a new terminal from the project root:
+
+```bash
+npm install
+npm run dev
+```
+
+The frontend runs on `http://localhost:5173`.
+
+---
+
+## Environment Variables
+
+| Variable | Location | Description |
+|---|---|---|
+| `GROQ_API_KEY` | `backend/.env` | Your Groq API key |
+
+> ⚠️ Never commit your `.env` file. It is listed in `.gitignore`.
+
+---
+
+## Deployment
+
+**Frontend → GitHub Pages**
+```bash
+npm run build
+npm run deploy
+```
+
+**Backend → Render**
+- Set Root Directory to `backend`
+- Build Command: `npm install`
+- Start Command: `node server.js`
+- Add `GROQ_API_KEY` in Render's Environment Variables
+
+---
+
+## How It Works
+
+1. User types a message and hits Send
+2. The frontend sends the full conversation history to the Express backend at `/api/chat`
+3. The backend forwards the request to the Groq API with the API key attached server-side
+4. The Groq API returns a response from the `qwen/qwen3.6-27b` model
+5. The response is displayed in the chat with markdown formatting
+
+---
+
+## Author
+
+**Fathimath Nahla Salami E**
+- GitHub: [@FathimathNahlaSalamiE](https://github.com/FathimathNahlaSalamiE)
+- LinkedIn: [linkedin.com/in/fathimath-nahla-salami](https://linkedin.com/in/fathimath-nahla-salami)
